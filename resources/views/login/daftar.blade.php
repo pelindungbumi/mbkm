@@ -4,7 +4,7 @@
 <div class="login-wrapper">
   <div class="login-container">
     <h2 class="text-center title">REGISTRASI AKUN BARU</h2>
-    <form class="login-form" action="/login/daftar" method="post" id="login">
+    <form class="login-form" action="/daftar" method="post" id="login">
       @csrf
       <div class="login-form-username form-group">
         <label class="sr-only" for="nim">

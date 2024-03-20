@@ -48,7 +48,7 @@
   </div>
 </div>
 <div class="login-footer text-center">
-  belum memiliki akun?<a href="/daftar">Registrasi</a>
+  belum memiliki akun?<a href="/login/daftar">Registrasi</a>
 </div>
 
 @endsection
