@@ -1,33 +1,45 @@
 @extends('login.layouts.main')
 
 @section('bodyauth')
-<main class="form-signin">
-  <form class="row g-3" action="/daftar" method="POST">
-    @csrf
-    <div class="form-floating mb-1">
-      <input type="number" class="form-control @error('nim') is-invalid @enderror" name="nim" required>
-      <label for="floatingInput">Nim</label>
-    </div>
-    <div class="form-floating mb-1">
-      <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" required>
-      <label for="floatingInput">Nama lengkap</label>
-    </div>
-    <div class="form-floating mb-1">
-      <input type="text" class="form-control  @error('username') is-invalid @enderror" name="username" required>
-      <label for="floatingInput">Username</label>
-    </div>
-    <div class="form-floating">
-      <input type="password" class="form-control  @error('password') is-invalid @enderror" name="password" required>
-      <label for="floatingPassword">Password</label>
-    </div>
-    <div class="form-floating">
-      <input type="password" class="form-control  @error('password2') is-invalid @enderror" name="password2" placeholder="Password">
-      <label for="floatingPassword">Konfirmasi Ulang Password</label>
-    </div>
-    
-    <div class="col-12">
-      <button type="submit" class="btn btn-primary">Daftar</button>
-    </div>
-  </form>
-  </main>
+<div class="login-wrapper">
+  <div class="login-container">
+    <h2 class="text-center title">REGISTRASI AKUN BARU</h2>
+    <form class="login-form" action="/login/daftar" method="post" id="login">
+      @csrf
+      <div class="login-form-username form-group">
+        <label class="sr-only" for="nim">
+          NIM
+        </label>
+        <input type="number" class="form-control @error('nim') is-invalid @enderror" name="nim" required placeholder="NIM">
+      </div>
+      <div class="login-form-username form-group">
+        <label class="sr-only" for="name">
+          Nama Lengkap
+        </label>
+        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" required placeholder="Nama Lengkap">
+      </div>
+      <div class="login-form-username form-group">
+        <label class="sr-only" for="username">
+          Username
+        </label>
+        <input type="text" class="form-control  @error('username') is-invalid @enderror" name="username" required placeholder="Username">
+      </div>
+      <div class="login-form-username form-group">
+        <label class="sr-only" for="nim">
+          Password
+        </label>
+        <input type="password" class="form-control  @error('password') is-invalid @enderror" name="password" required placeholder="Password">
+      </div>
+      <div class="login-form-username form-group">
+        <label class="sr-only" for="nim">
+          Konfirmasi Ulang Password
+        </label>
+        <input type="password" class="form-control  @error('password2') is-invalid @enderror" name="password2" required placeholder="Konfirmasi Ulang Password">
+      </div>
+      <div class="login-form-submit form-group text-right">
+        <button class="btn btn-login" type="submit" id="loginbtn">daftar</button>
+      </div>
+    </form>
+  </div>
+</div>
 @endsection
